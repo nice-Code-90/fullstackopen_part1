@@ -4,9 +4,9 @@ const Statistics = ({ v1, v2, v3 }) => {
   if (v1 + v2 + v3 === 0) return <>No feedback given</>;
   return (
     <>
-      <Votes target="good" votes={v1} />
-      <Votes target="neutral" votes={v2} />
-      <Votes target="bad" votes={v3} />
+      <StatisticLine target="good" votes={v1} />
+      <StatisticLine target="neutral" votes={v2} />
+      <StatisticLine target="bad" votes={v3} />
       <SumOfVotes v1={v1} v2={v2} v3={v3} />
       <Average v1={v1} v2={v2} v3={v3} />
       <Positive v1={v1} v2={v2} v3={v3} />
@@ -21,7 +21,7 @@ const Button = ({ text, handleClick }) => {
   return <button onClick={handleClick}>{text}</button>;
 };
 
-const Votes = ({ target, votes }) => {
+const StatisticLine = ({ target, votes }) => {
   return (
     <p>
       {target} {votes}
